@@ -54,8 +54,8 @@ public class move : NetworkBehaviour {
             GetComponent<GvrAudioListener>().enabled = false;
             GetComponent<AudioListener>().enabled = false;
             GetComponent<Camera>().enabled = false;
-            Transform leftEye = this.transform.FindChild("Player(Clone) Left");
-            Transform rightEye = this.transform.FindChild("Player(Clone) Right");
+            Transform leftEye = this.transform.Find("Player(Clone) Left");
+            Transform rightEye = this.transform.Find("Player(Clone) Right");
             if (leftEye != null) leftEye.gameObject.SetActive(false);
             if (rightEye != null) rightEye.gameObject.SetActive(false);
         }
@@ -64,8 +64,8 @@ public class move : NetworkBehaviour {
             GetComponent<AudioListener>().enabled = true;
             GetComponent<GvrAudioListener>().enabled = true;
             GetComponent<Camera>().enabled = true;
-            this.transform.FindChild("GvrViewerMain").gameObject.SetActive(true);
-            this.transform.FindChild("GvrReticlePointer").gameObject.SetActive(true);
+            this.transform.Find("GvrViewerMain").gameObject.SetActive(true);
+            this.transform.Find("GvrReticlePointer").gameObject.SetActive(true);
             infield = GameObject.FindGameObjectWithTag("messageField");
             infield.GetComponent<sendText>().localg = this.gameObject;
             cvas = GameObject.FindGameObjectWithTag("canvas").GetComponent<eventCamera>();
@@ -74,7 +74,7 @@ public class move : NetworkBehaviour {
             
         }
         tm = GetComponentInChildren<TextMesh>();
-        VRSettings.enabled = true;
+        UnityEngine.XR.XRSettings.enabled = true;
         GameObject mainCam = GameObject.FindGameObjectWithTag("MainCamera");
         if(mainCam != null) mainCam.SetActive(false);
 
