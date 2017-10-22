@@ -7,7 +7,7 @@ public class startUp : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        VRSettings.enabled = false;
+        UnityEngine.XR.XRSettings.enabled = false;
 	}
 	
 	// Update is called once per frame
