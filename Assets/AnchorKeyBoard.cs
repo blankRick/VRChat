@@ -16,7 +16,7 @@ public class AnchorKeyBoard : MonoBehaviour {
         if(assigned)
         {
             this.GetComponent<RectTransform>().position = globalPos;
-            this.GetComponent<RectTransform>().forward = globalForward;
+            //this.GetComponent<RectTransform>().forward = globalForward;
         }
     }
     public void anchor()
